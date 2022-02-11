@@ -1,7 +1,7 @@
 import {
   ChakraProvider,
-  Box,
   Heading,
+  Center,
 } from "@chakra-ui/react";
 import {
   Links,
@@ -21,7 +21,7 @@ function Document({
   title?: string;
 }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
         <meta charSet="utf-8" />
         <meta
@@ -63,12 +63,12 @@ export function CatchBoundary() {
       title={`${caught.status} ${caught.statusText}`}
     >
       <ChakraProvider>
-        <Box>
-          <Heading as="h1" bg="purple.600">
+        <Center minH={"100vh"}>
+          <Heading as="h1">
             [CatchBoundary]: {caught.status}{" "}
             {caught.statusText}
           </Heading>
-        </Box>
+        </Center>
       </ChakraProvider>
     </Document>
   );
@@ -78,12 +78,12 @@ export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <Document title="Error!">
       <ChakraProvider>
-        <Box>
+        <Center minH={"100vh"}>
           <Heading as="h1" bg="blue.500">
             [ErrorBoundary]: There was an error:{" "}
             {error.message}
           </Heading>
-        </Box>
+        </Center>
       </ChakraProvider>
     </Document>
   );
