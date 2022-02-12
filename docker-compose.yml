@@ -14,6 +14,7 @@ services:
       - /workspace/node_modules
       - /workspace/.cache
       - /workspace/build
+      - /workspace/public/build
     # 環境変数
     environment:
       TZ: "Asia/Tokyo"
